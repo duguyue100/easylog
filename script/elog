@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 """The central routine of easylog.
 
+usage: elog [-h] [--file-name=FILE_NAME] [--extra-args=EXTRA_ARGS]
+
 Author: Yuhuang Hu
 Email : duguyue100@gmail.com
 """
 
 from __future__ import print_function
 import argparse
+
+import easylog
 
 def easylog_main(file_name, extra_args):
     """The main function for running easylog tool.
@@ -20,7 +24,7 @@ def easylog_main(file_name, extra_args):
     """
     print (file_name)
     print (extra_args)
-
+    print (easylog.RUNNING_PYTHON)
 
 
 if __name__ == "__main__":
@@ -28,6 +32,7 @@ if __name__ == "__main__":
                                      "experiments by Yuhuang Hu")
 
     parser.add_argument("--file-name", "-f", type=str,
+                        default="default.py",
                         help="The script that you want to log.")
     parser.add_argument("--extra-args", "-e", type=str,
                         default="",
