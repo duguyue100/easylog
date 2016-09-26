@@ -9,11 +9,11 @@ import os
 import sys
 from os.path import join, isdir
 
+from easylog.utils import *
+
 HOME_PATH = os.environ["HOME"]
 EASYLOG_PATH = join(HOME_PATH, ".easylog")
 RUNNING_PYTHON = sys.version_info[0]
-
-print (RUNNING_PYTHON)
 
 # create resource folder if not existed.
 if not isdir(EASYLOG_PATH):

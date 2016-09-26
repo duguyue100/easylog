@@ -12,6 +12,7 @@ import argparse
 
 import easylog
 
+
 def easylog_main(file_name, extra_args):
     """The main function for running easylog tool.
 
@@ -22,9 +23,7 @@ def easylog_main(file_name, extra_args):
     extra_args: string
         the extra arguments from the script you want to log.
     """
-    print (file_name)
-    print (extra_args)
-    print (easylog.RUNNING_PYTHON)
+    print (easylog.split_args(extra_args))
 
 
 if __name__ == "__main__":
