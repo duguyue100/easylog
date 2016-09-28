@@ -13,7 +13,7 @@ import argparse
 import easylog
 
 
-def easylog_main(file_name, extra_args):
+def easylog_main(runner, file_name, extra_args, token):
     """The main function for running easylog tool.
 
     Parameters
@@ -30,12 +30,20 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="A minimum logger for "
                                      "experiments by Yuhuang Hu")
 
+    parser.add_argument("--runner", "-r", type=str,
+                        default="python",
+                        help="the interpreter of the program, such as "
+                        "python, julia, scheme, sh, etc. if this is empty, "
+                        "then the file is treated as one executable.")
     parser.add_argument("--file-name", "-f", type=str,
                         default="default.py",
                         help="The script that you want to log.")
     parser.add_argument("--extra-args", "-e", type=str,
                         default="",
                         help="Extra arguments that are for the scripts.")
+    parser.add_argument("--token", "-t", type=str,
+                        default="default",
+                        help="The token file name for the telegram bot.")
 
     args = parser.parse_args()
 
