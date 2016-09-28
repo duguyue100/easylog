@@ -41,7 +41,7 @@ setup(
 
     packages=["easylog"],
     # package_data={"easylog": ["retina-data/*.*"]},
-    scripts=["script/easylog.py"],
+    scripts=["script/elog"],
 
     classifiers=list(filter(None, classifiers.split('\n'))),
     description="A minimum logger for experiments."
